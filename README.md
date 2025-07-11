@@ -4,7 +4,8 @@
 
 
 
-url atual = [https://fiiss.lovable.app/](https://fiiss-88.lovable.app/)
+url atual = https://fiiss-88.lovable.app/
+
 
 
 ## How can I edit this code?
