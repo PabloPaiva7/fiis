@@ -2,9 +2,9 @@
 
 ## Project info
 
-**URL**: [https://lovable.dev/projects/093ee45b-dfc8-411e-8861-b10b250986ad](https://fiis.lovable.app/)
 
-url atual = https://fiiss.lovable.app/
+
+url atual = [https://fiiss.lovable.app/](https://fiiss-88.lovable.app/)
 
 
 ## How can I edit this code?
