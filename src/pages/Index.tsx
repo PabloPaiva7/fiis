@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { FII } from '../types/fii';
 import { fiiApiService } from '../services/fiiApiService';
@@ -247,7 +246,7 @@ const Index = () => {
             </section>
           </>
         ) : (
-          <FiiSimulator />
+          <FiiSimulator fiis={fiis} />
         )}
       </main>
 
