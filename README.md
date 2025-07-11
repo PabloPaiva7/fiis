@@ -1,77 +1,98 @@
-# Welcome to your Lovable project
+🏗️ Projeto FIIss – Aplicativo de Fundos Imobiliários
+📍 Publicação ativa em:
 
-## Project info
+🔗 [https://projetofiis.lovable.app](https://projetofiis.lovable.app/)
 
+💡 Sobre o Projeto
+Este é um aplicativo web criado com foco em facilitar o acompanhamento de Fundos Imobiliários (FIIs), exibindo informações importantes como:
+✅ Preço da cota
+✅ Dividendos distribuídos
+✅ Datas de pagamento
 
+Publicado via Lovable, este projeto mostra como é possível criar e lançar soluções reais usando tecnologias modernas — mesmo sem uma equipe inteira por trás.
 
-url atual = [https://fiiss-88.lovable.app/](https://projetofiis.lovable.app/)
+Publicar um projeto é o primeiro passo para transformar uma ideia em um produto real.
+Use isso no seu portfólio, compartilhe com colegas e valide com usuários reais.
 
+🛠️ Tecnologias Utilizadas
+O projeto foi desenvolvido com:
 
+Vite – bundler ultrarrápido
 
-## How can I edit this code?
+React + TypeScript
 
-There are several ways of editing your application.
+Tailwind CSS – utilitário moderno de estilização
 
-**Use Lovable**
+shadcn/ui – componentes acessíveis e modernos
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/093ee45b-dfc8-411e-8861-b10b250986ad) and start prompting.
+Lovable – plataforma de desenvolvimento assistido por IA
 
-Changes made via Lovable will be committed automatically to this repo.
+✍️ Como editar este projeto?
+🔹 Via Lovable (recomendado)
+Acesse o projeto e edite com prompts no próprio navegador:
+🔧 Abrir no Lovable
 
-**Use your preferred IDE**
+Alterações feitas por lá são salvas automaticamente neste repositório.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🔹 Editar localmente no seu computador
+bash
+Copiar
+Editar
+# Clone o repositório
+git clone <SUA_URL_DO_GIT>
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+# Acesse a pasta do projeto
+cd <nome-do-projeto>
 
-Follow these steps:
+# Instale as dependências
+npm install
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Rode o ambiente de desenvolvimento
 npm run dev
-```
+✔️ Requisitos: Node.js + npm (use nvm para facilitar)
 
-**Edit a file directly in GitHub**
+🔹 Editar direto pelo GitHub
+Acesse o arquivo desejado no repositório
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Clique no ícone ✏️ (editar)
 
-**Use GitHub Codespaces**
+Faça as alterações e confirme com um commit
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🔹 Usar o GitHub Codespaces (ambiente online)
+Clique em Code > Codespaces
 
-## What technologies are used for this project?
+Crie um novo ambiente
 
-This project is built with:
+Edite, teste e publique direto do navegador
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+🚀 Como publicar meu aplicativo?
+No próprio Lovable:
 
-## How can I deploy this project?
+Vá até seu projeto
 
-Simply open [Lovable](https://lovable.dev/projects/093ee45b-dfc8-411e-8861-b10b250986ad) and click on Share -> Publish.
+Clique em Compartilhar → Publicar
 
-## Can I connect a custom domain to my Lovable project?
+Pronto! Seu app estará disponível publicamente.
 
-Yes, you can!
+🌐 Posso usar meu próprio domínio?
+Sim! No Lovable:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Acesse: Projeto > Configurações > Domínios
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Clique em Conectar Domínio
+
+Guia completo:
+📘 Como usar domínio personalizado
+
+🧠 Por que isso é importante?
+Publicar aplicações te coloca em outro nível:
+
+💼 Mostra sua capacidade técnica com algo concreto
+
+🌍 Permite que outras pessoas testem e colaborem
+
+🔁 Acelera ciclos de feedback e aprendizado
+
+🚀 Impulsiona seu portfólio e presença online
+
+Não é só um projeto. É uma vitrine da sua capacidade de criar soluções reais.
