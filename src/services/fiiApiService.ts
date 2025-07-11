@@ -2,28 +2,51 @@ import { FII, ChartData } from '../types/fii';
 import { BrapiResponse, HistoricalData } from '../types/api';
 import { mockFIIs } from '../data/mockFiiData';
 
-// Lista de FIIs conhecidos com seus setores
+// Lista expandida de FIIs conhecidos com seus setores
 const FII_SECTORS: Record<string, string> = {
+  // Logísticos
   'KNRI11': 'Logístico',
   'HGLG11': 'Logístico', 
-  'XPML11': 'Shoppings',
   'VILG11': 'Logístico',
   'BTLG11': 'Logístico',
-  'IRDM11': 'Híbrido',
-  'MXRF11': 'Corporativo',
-  'KNCR11': 'Corporativo',
-  'MALL11': 'Shoppings',
-  'VRTA11': 'Logístico',
-  'RECT11': 'Corporativo',
-  'HGRE11': 'Corporativo',
-  'BCFF11': 'Corporativo',
   'XPLG11': 'Logístico',
   'RBRR11': 'Logístico',
+  'VRTA11': 'Logístico',
+  'GALG11': 'Logístico',
+  
+  // Shoppings
+  'XPML11': 'Shoppings',
+  'MALL11': 'Shoppings',
+  'SHPH11': 'Shoppings',
+  
+  // Corporativos
+  'MXRF11': 'Corporativo',
+  'KNCR11': 'Corporativo',
+  'HGRE11': 'Corporativo',
+  'RECT11': 'Corporativo',
+  'BCFF11': 'Corporativo',
   'BBPO11': 'Corporativo',
   'CVBI11': 'Corporativo',
-  'GALG11': 'Logístico',
   'JSRE11': 'Corporativo',
-  'RBRD11': 'Logístico'
+  
+  // Híbridos
+  'IRDM11': 'Híbrido',
+  'RBRD11': 'Híbrido',
+  
+  // Residenciais
+  'HGBS11': 'Residencial',
+  'VINO11': 'Residencial',
+  
+  // Agronegócio
+  'RZAG11': 'Agronegócio',
+  'CROP11': 'Agronegócio',
+  
+  // Papel e Celulose
+  'HCTR11': 'Papel e Celulose',
+  
+  // Outros
+  'FIIP11': 'Outros',
+  'BRCO11': 'Outros'
 };
 
 const BRAPI_BASE_URL = 'https://brapi.dev/api';
@@ -236,19 +259,18 @@ class FiiApiService {
   }
 
   async getTopFiis(): Promise<FII[]> {
-    const topTickers = [
-      'KNRI11', 'HGLG11', 'XPML11', 'VILG11', 'BTLG11', 
-      'IRDM11', 'MXRF11', 'KNCR11'
-    ];
+    // Carregar todos os FIIs simulados - lista expandida
+    const allTickers = mockFIIs.map(fii => fii.ticker);
 
-    const promises = topTickers.map(ticker => this.fetchFiiData(ticker));
+    const promises = allTickers.map(ticker => this.fetchFiiData(ticker));
     const results = await Promise.allSettled(promises);
     
     return results
       .filter((result): result is PromiseFulfilledResult<FII> => 
         result.status === 'fulfilled' && result.value !== null
       )
-      .map(result => result.value);
+      .map(result => result.value)
+      .sort((a, b) => b.dividendYield - a.dividendYield); // Ordenar por dividend yield
   }
 }
 
