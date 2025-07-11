@@ -16,28 +16,22 @@ interface FiiSimulatorProps {
 
 export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
   const [selectedFii, setSelectedFii] = useState<string>('');
-  const [quantidade, setQuantidade] = useState<number>(100);
-  const [precoCompra, setPrecoCompra] = useState<number>(0);
-  const [dividendo, setDividendo] = useState<number>(0);
-  const [meses, setMeses] = useState<number>(12);
-
-  const { calcularSimulacao } = useFiiSimulator();
+  const { simulationData, results, updateSimulation } = useFiiSimulator();
 
   const handleFiiSelect = (ticker: string) => {
     setSelectedFii(ticker);
     const fii = fiis.find(f => f.ticker === ticker);
     if (fii) {
-      setPrecoCompra(fii.currentPrice);
-      setDividendo(fii.lastDividend);
+      updateSimulation({
+        precoCompra: fii.currentPrice,
+        dividendo: fii.lastDividend
+      });
     }
   };
 
-  const simulacao = calcularSimulacao({
-    quantidade,
-    precoCompra,
-    dividendo,
-    meses
-  });
+  const handleInputChange = (field: keyof typeof simulationData, value: number) => {
+    updateSimulation({ [field]: value });
+  };
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -87,12 +81,12 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
 
             {/* Quantidade */}
             <div className="space-y-2">
-              <Label htmlFor="quantidade">Quantidade de Cotas</Label>
+              <Label htmlFor="cotas">Quantidade de Cotas</Label>
               <Input
-                id="quantidade"
+                id="cotas"
                 type="number"
-                value={quantidade}
-                onChange={(e) => setQuantidade(Number(e.target.value))}
+                value={simulationData.cotas}
+                onChange={(e) => handleInputChange('cotas', Number(e.target.value))}
                 min="1"
               />
             </div>
@@ -104,8 +98,8 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
                 id="preco"
                 type="number"
                 step="0.01"
-                value={precoCompra}
-                onChange={(e) => setPrecoCompra(Number(e.target.value))}
+                value={simulationData.precoCompra}
+                onChange={(e) => handleInputChange('precoCompra', Number(e.target.value))}
                 min="0"
               />
             </div>
@@ -117,8 +111,8 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
                 id="dividendo"
                 type="number"
                 step="0.01"
-                value={dividendo}
-                onChange={(e) => setDividendo(Number(e.target.value))}
+                value={simulationData.dividendo}
+                onChange={(e) => handleInputChange('dividendo', Number(e.target.value))}
                 min="0"
               />
             </div>
@@ -129,8 +123,8 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
               <Input
                 id="meses"
                 type="number"
-                value={meses}
-                onChange={(e) => setMeses(Number(e.target.value))}
+                value={simulationData.meses}
+                onChange={(e) => handleInputChange('meses', Number(e.target.value))}
                 min="1"
                 max="120"
               />
@@ -148,7 +142,7 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
               <div>
                 <p className="text-sm text-muted-foreground">Rendimento Mensal</p>
                 <p className="text-2xl font-bold text-success">
-                  {formatCurrency(simulacao.rendimentoMensal)}
+                  {formatCurrency(results.rendimentoMensal)}
                 </p>
               </div>
             </div>
@@ -162,7 +156,7 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
               <div>
                 <p className="text-sm text-muted-foreground">Rendimento Acumulado</p>
                 <p className="text-2xl font-bold text-info">
-                  {formatCurrency(simulacao.rendimentoAcumulado)}
+                  {formatCurrency(results.rendimentoAcumulado)}
                 </p>
               </div>
             </div>
@@ -176,7 +170,7 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
               <div>
                 <p className="text-sm text-muted-foreground">Rentabilidade</p>
                 <p className="text-2xl font-bold text-warning">
-                  {simulacao.rentabilidade.toFixed(2)}%
+                  {results.rentabilidadePercentual.toFixed(2)}%
                 </p>
               </div>
             </div>
@@ -190,7 +184,7 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
               <div>
                 <p className="text-sm text-muted-foreground">Investimento Total</p>
                 <p className="text-2xl font-bold text-primary">
-                  {formatCurrency(simulacao.investimentoTotal)}
+                  {formatCurrency(results.investimentoInicial)}
                 </p>
               </div>
             </div>
@@ -200,8 +194,8 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
 
       {/* Projection Chart */}
       <FiiProjectionChart 
-        data={simulacao.cenarios} 
-        meses={meses}
+        data={results.cenarios} 
+        meses={simulationData.meses}
       />
     </div>
   );
