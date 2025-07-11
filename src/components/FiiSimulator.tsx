@@ -18,10 +18,15 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
   const [selectedFii, setSelectedFii] = useState<string>('');
   const { simulationData, results, updateSimulation } = useFiiSimulator();
 
+  console.log('FiiSimulator - fiis recebidos:', fiis);
+  console.log('FiiSimulator - quantidade de FIIs:', fiis.length);
+
   const handleFiiSelect = (ticker: string) => {
+    console.log('FII selecionado:', ticker);
     setSelectedFii(ticker);
     const fii = fiis.find(f => f.ticker === ticker);
     if (fii) {
+      console.log('Dados do FII encontrado:', fii);
       updateSimulation({
         precoCompra: fii.currentPrice,
         dividendo: fii.lastDividend
@@ -70,13 +75,24 @@ export const FiiSimulator = ({ fiis = [] }: FiiSimulatorProps) => {
                   <SelectValue placeholder="Escolha um FII da lista" />
                 </SelectTrigger>
                 <SelectContent>
-                  {fiis.map((fii) => (
-                    <SelectItem key={fii.ticker} value={fii.ticker}>
-                      {fii.ticker} - {fii.name}
+                  {fiis.length > 0 ? (
+                    fiis.map((fii) => (
+                      <SelectItem key={fii.ticker} value={fii.ticker}>
+                        {fii.ticker} - {fii.name}
+                      </SelectItem>
+                    ))
+                  ) : (
+                    <SelectItem value="no-fiis" disabled>
+                      Nenhum FII disponível
                     </SelectItem>
-                  ))}
+                  )}
                 </SelectContent>
               </Select>
+              {fiis.length === 0 && (
+                <p className="text-sm text-muted-foreground">
+                  {fiis.length} FIIs carregados
+                </p>
+              )}
             </div>
 
             {/* Quantidade */}
