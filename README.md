@@ -10,7 +10,7 @@ original: https://monitorfiis.lovable.app/
 
 original 2.0: https://monitorfiis.lovable.app/
 
-original 3.0 https://monitordefiisbeta.lovable.app/
+original beta https://monitordefiisbeta.lovable.app/
 
 💡 Sobre o Projeto
 Este é um aplicativo web criado com foco em facilitar o acompanhamento de Fundos Imobiliários (FIIs), exibindo informações importantes como:
