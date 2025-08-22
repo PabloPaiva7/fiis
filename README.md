@@ -21,6 +21,7 @@ APLICATIVO PRONTO: https://aplicativofiismonitor.lovable.app/
 
 
 
+
 💡 Sobre o Projeto
 Este é um aplicativo web criado com foco em facilitar o acompanhamento de Fundos Imobiliários (FIIs), exibindo informações importantes como:
 ✅ Preço da cota
