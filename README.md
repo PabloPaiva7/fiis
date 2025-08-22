@@ -20,6 +20,8 @@ APLICATIVO PRONTO: https://aplicativofiismonitor.lovable.app/
 
 ULTIMA VERSÃO 22/O8/2025 : https://aplicativofiis.lovable.app/
 
+ULITMA VERSÃO 2.0 22/08/2025 : https://aplicativofiis.lovable.app/
+
 
 
 
