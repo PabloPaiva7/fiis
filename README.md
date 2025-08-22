@@ -18,6 +18,9 @@ APLICATIVO TESTE: https://appmonitosfiis.lovable.app/
 
 APLICATIVO PRONTO: https://aplicativofiismonitor.lovable.app/
 
+ULTIMA VERSÃO 22/O8/2025 : https://aplicativofiis.lovable.app/
+
+
 
 
 
