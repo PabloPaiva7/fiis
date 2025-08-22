@@ -16,6 +16,9 @@ original 2.0: https://monitorfiis.lovable.app/
 
 APLICATIVO TESTE: https://appmonitosfiis.lovable.app/
 
+APLICATIVO PRONTO: https://aplicativofiismonitor.lovable.app/
+
+
 
 
 💡 Sobre o Projeto
