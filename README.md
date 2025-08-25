@@ -3,25 +3,6 @@
 
 🔗https://projetofiis-63.lovable.app/
 
-https://monitorfiis.lovable.app/
-
-
-original: https://monitorfiis.lovable.app/
-
-original 2.0: https://monitorfiis.lovable.app/
-
-==== original beta https://monitordefiisbeta.lovable.app/ ====
-
-=== beta ultima versão https://betafiis.lovable.app/ ====
-
-APLICATIVO TESTE: https://appmonitosfiis.lovable.app/
-
-APLICATIVO PRONTO: https://aplicativofiismonitor.lovable.app/
-
-ULTIMA VERSÃO 22/O8/2025 : https://aplicativofiis.lovable.app/
-
-ULITMA VERSÃO 2.0 22/08/2025 : https://aplicativofiis.lovable.app/
-
 
 
 
