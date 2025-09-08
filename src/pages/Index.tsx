@@ -5,8 +5,9 @@ import { FiiCard } from '../components/FiiCard';
 import { FiiSearch } from '../components/FiiSearch';
 import { FiiDetailModal } from '../components/FiiDetailModal';
 import { FiiSimulator } from '../components/FiiSimulator';
+import { TradingDashboard } from '../components/TradingDashboard';
 import { useToast } from '@/hooks/use-toast';
-import { Building, TrendingUp, Search, Star, Loader2, Wifi, Calculator } from 'lucide-react';
+import { Building, TrendingUp, Search, Star, Loader2, Wifi, Calculator, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
@@ -15,7 +16,7 @@ const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'monitor' | 'simulator'>('monitor');
+  const [activeTab, setActiveTab] = useState<'monitor' | 'simulator' | 'trading'>('monitor');
   const { toast } = useToast();
 
   // Carregar FIIs principais na inicialização
@@ -135,6 +136,15 @@ const Index = () => {
                   <Calculator className="w-4 h-4" />
                   Simulador
                 </Button>
+                <Button
+                  variant={activeTab === 'trading' ? 'default' : 'ghost'}
+                  size="sm"
+                  onClick={() => setActiveTab('trading')}
+                  className="flex items-center gap-2"
+                >
+                  <Brain className="w-4 h-4" />
+                  Trading AI
+                </Button>
               </div>
               
               {activeTab === 'monitor' && (
@@ -245,8 +255,10 @@ const Index = () => {
               )}
             </section>
           </>
-        ) : (
+        ) : activeTab === 'simulator' ? (
           <FiiSimulator fiis={fiis} />
+        ) : (
+          <TradingDashboard fiis={fiis} />
         )}
       </main>
 
