@@ -11,6 +11,8 @@ https://setembro-version-79.lovable.app/ (versão 09/09)  https://setembro-versi
 
 https://setembro-version-06.lovable.app/ (versão 15/09)
 
+https://outubroversion.lovable.app/
+
 
 
 
